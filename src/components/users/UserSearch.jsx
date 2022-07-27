@@ -20,11 +20,11 @@ function UserSearch() {
         }
         else{
             dispatch({type: 'SET_LOADING'})
-            const data = await searchUsers(text)
+            const users = await searchUsers(text)
             dispatch({
                 type: 'GET_USERS',
                 payload:{
-                    users: data,
+                    users: users,
                 }
             })
             setText('')

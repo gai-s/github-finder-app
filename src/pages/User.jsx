@@ -15,7 +15,7 @@ function User() {
         const userFetch = async () => {
             dispatch({type: 'SET_LOADING'})
             const data = await getUserAndRepos(params.login)
-            dispatch({type: 'GET_USER_AND_REPOS', payload:{user: data.user, repos: data.repos}})
+            dispatch({type: 'GET_USER_AND_REPOS', payload: data})
         }
         userFetch()
     }, [params.login, dispatch])
